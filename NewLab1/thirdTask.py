@@ -58,8 +58,6 @@ plt.show()
 missing_pct = int(visa['Цена'].size * 0.1)
 i = [random.choice(range(visa['Цена'].shape[0])) for _ in range(missing_pct)]
 visa['Цена'][i] = np.NaN
-visa['Цена'][visa['Цена'].shape[0] - 1] = np.NaN
-visa['Цена'][visa['Цена'].shape[0] - 2] = np.NaN
 
 visa_1 = visa.copy()
 visa_2 = visa.copy()
