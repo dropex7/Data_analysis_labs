@@ -34,13 +34,14 @@ def correlation_recovery(data, column_index):
                     p2 = data["Макс."][item + 1]
                     v2 = data[column_index][item + 1]
                     missing_value = (v2 / p1) * p2
+                    data[column_index][item] = missing_value
             elif math.isfinite(data[column_index][item - 1]):
                 p1 = data["Макс."][item - 1]
                 v1 = data[column_index][item - 1]
                 p2 = data["Макс."][item]
                 missing_value = (p1 / p2) * v1
+                data[column_index][item] = missing_value
 
-            data[column_index][item] = missing_value
 
 
 visa = pd.read_csv('visa.csv', sep=';', index_col='Дата')
